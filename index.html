@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapremina valjka</title>
+</head>
+<body>
+
+<h1>Izračunavanje zapremine valjka</h1>
+
+<label for="radius">Unesite poluprečnik valjka:</label>
+<input type="number" id="radius" placeholder="Poluprečnik">
+
+<label for="height">Unesite visinu valjka:</label>
+<input type="number" id="height" placeholder="Visina">
+
+<button onclick="izracunajZapreminu()">Izračunaj</button>
+
+<script>
+    function izracunajZapreminu() {
+        // Dobavljanje vrednosti poluprečnika i visine iz input polja
+        var radius = document.getElementById("radius").value;
+        var height = document.getElementById("height").value;
+
+        // Provera da li su unete vrednosti brojevi
+        if (isNaN(radius) || isNaN(height)) {
+            alert("Unesite validne brojeve za poluprečnik i visinu.");
+            return;
+        }
+
+        // Izračunavanje zapremine valjka po formuli
+        var zapremina = Math.PI * Math.pow(radius, 2) * height;
+
+        // Prikaz rezultata korisniku
+        alert("Zapremina valjka je: " + zapremina.toFixed(2));
+    }
+</script>
+
+</body>
+</html>
